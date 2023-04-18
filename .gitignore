@@ -37,6 +37,8 @@ packages/etc/systemd/system/supernode.service
 
 cmake-build-*/
 
+__pycache__
+
 # Binaries built to run tests
 tools/tests-auth
 tools/tests-compress
