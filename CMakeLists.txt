@@ -211,6 +211,10 @@ endif(DEFINED WIN32)
 
 add_executable(edge src/edge.c)
 target_link_libraries(edge n2n)
+if(DEFINED WIN32)
+  # Prompt UAC
+  set_target_properties(edge PROPERTIES LINK_FLAGS "/MANIFESTUAC:\"level='requireAdministrator' uiAccess='false'\"")
+endif(DEFINED WIN32)
 
 add_executable(supernode src/supernode.c)
 target_link_libraries(supernode n2n)
