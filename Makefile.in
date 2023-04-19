@@ -180,13 +180,20 @@ tools: $(N2N_LIB)
 win32:
 	$(MAKE) -C $@
 
+src/edge_rc.o: src/edge.rc src/edge.manifest
+	windres src/edge.rc -O coff -o src/edge_rc.o
+
 src/edge.o: $(N2N_DEPS)
 src/supernode.o: $(N2N_DEPS)
 src/example_edge_embed_quick_edge_init.o: $(N2N_DEPS)
 src/example_sn_embed.o: $(N2N_DEPS)
 src/example_edge_embed.o: $(N2N_DEPS)
 
+ifeq ($(CONFIG_TARGET), mingw)
+src/edge: $(N2N_LIB) src/edge_rc.o
+else
 src/edge: $(N2N_LIB)
+endif
 src/supernode: $(N2N_LIB)
 src/example_edge_embed_quick_edge_init: $(N2N_LIB)
 src/example_sn_embed: $(N2N_LIB)
