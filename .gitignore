@@ -25,7 +25,6 @@ build
 .idea
 .vscode
 .vs
-cmake-build-default
 packages/debian/debian/changelog
 packages/debian/debian/control
 packages/debian/debian/files
