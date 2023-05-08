@@ -4,12 +4,12 @@
 *.exe
 configure
 config.log
+config.mak
 config.rpath
 config.status
 include/config.h
 include/config.h.in
-/Makefile
-tools/Makefile
+tools/config.mak
 autom4te.cache
 edge
 example_edge_embed_quick_edge_init
