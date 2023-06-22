@@ -2626,7 +2626,9 @@ int run_sn_loop (n2n_sn_t *sss) {
 
         before = time(NULL);
 
+        traceEvent(TRACE_NORMAL, "start waiting for select");
         rc = select(max_sock + 1, &socket_mask, NULL, NULL, &wait_time);
+        traceEvent(TRACE_NORMAL, "finish waiting for select");
 
         now = time(NULL);
 
